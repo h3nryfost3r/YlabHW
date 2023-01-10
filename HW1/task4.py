@@ -8,6 +8,8 @@ import itertools as it
 
 def bananas(s):
     result = set()
+    # Created set of permutations which can possible can implmented to word "banana"
+    # (1, 0, ...), (0, 1, ...), ...
     maskPermutations = { x for x in it.permutations([1]*len('banana') + [0]*(len(s)-len('banana'))) }
     for mask in maskPermutations:
         if ''.join([x for x in it.compress(s, mask)]) == 'banana':
