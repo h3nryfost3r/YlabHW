@@ -16,9 +16,7 @@ def count_find_num(primesL, limit):
             )
         ))):
         nums = nums.union(newOnes)
-    if any(nums):
-        return [len(nums), sorted(nums).pop()]
-    return []
+    return [len(nums), max(nums)] if any(nums) else []
 
 primesL = [2, 3]
 limit = 200
